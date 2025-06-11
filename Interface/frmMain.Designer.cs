@@ -89,6 +89,7 @@
             this.btnClients.Size = new System.Drawing.Size(60, 60);
             this.btnClients.Text = "Clientes";
             this.btnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // toolStripSeparator4
             // 

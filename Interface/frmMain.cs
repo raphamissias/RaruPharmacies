@@ -12,9 +12,16 @@ namespace Interface
 {
     public partial class frmMain : Form
     {
+        Interface.frmClients clientForm = new Interface.frmClients();
+
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void btnClients_Click(object sender, EventArgs e)
+        {
+            clientForm.Show();
         }
     }
 }
