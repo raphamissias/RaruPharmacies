@@ -8,7 +8,7 @@ namespace DataAccess
 {
     public class Connection
     {
-        private static string connection = @"Data Source=localhost\SQLEXPRESS; Initial Catalog=RaruPharmacies; Persist Security Info=true; User=aluno; Password=aluno123!";
+        private static string connection = @"Data Source=RAPHA\SQLEXPRESS; Initial Catalog=RaruPharmacies; Persist Security Info=true; Integrated Security=True;";
 
         public static string stringConnection
         {
