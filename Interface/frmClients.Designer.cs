@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClients));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -46,30 +46,43 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbCpf = new System.Windows.Forms.RadioButton();
+            this.rbName = new System.Windows.Forms.RadioButton();
             this.dtpBirthdate = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.txtObservation = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtRg = new System.Windows.Forms.MaskedTextBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCellphone = new System.Windows.Forms.MaskedTextBox();
+            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dtpRegistrationDate = new System.Windows.Forms.DateTimePicker();
-            this.rbName = new System.Windows.Forms.RadioButton();
-            this.rbCpf = new System.Windows.Forms.RadioButton();
             this.dtgClients = new System.Windows.Forms.DataGridView();
-            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
-            this.txtRg = new System.Windows.Forms.MaskedTextBox();
-            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
-            this.txtCellphone = new System.Windows.Forms.MaskedTextBox();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dtgId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgNeighborhood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgCellphone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgRegistrationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgBirthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgOberservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -87,7 +100,7 @@
             this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(693, 53);
+            this.toolStrip1.Size = new System.Drawing.Size(689, 53);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -102,6 +115,11 @@
             this.btnNew.Size = new System.Drawing.Size(50, 50);
             this.btnNew.Text = "Novo";
             this.btnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 53);
             // 
             // btnSave
             // 
@@ -121,11 +139,6 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 53);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 53);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -140,21 +153,21 @@
             // 
             this.txtName.Location = new System.Drawing.Point(91, 90);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(207, 20);
-            this.txtName.TabIndex = 3;
+            this.txtName.Size = new System.Drawing.Size(89, 20);
+            this.txtName.TabIndex = 1;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(91, 117);
+            this.txtAddress.Location = new System.Drawing.Point(91, 141);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(207, 20);
-            this.txtAddress.TabIndex = 5;
+            this.txtAddress.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 121);
+            this.label2.Location = new System.Drawing.Point(10, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 4;
@@ -162,16 +175,16 @@
             // 
             // txtNeighborhood
             // 
-            this.txtNeighborhood.Location = new System.Drawing.Point(91, 144);
+            this.txtNeighborhood.Location = new System.Drawing.Point(91, 168);
             this.txtNeighborhood.Name = "txtNeighborhood";
             this.txtNeighborhood.Size = new System.Drawing.Size(207, 20);
-            this.txtNeighborhood.TabIndex = 7;
+            this.txtNeighborhood.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 148);
+            this.label3.Location = new System.Drawing.Point(10, 172);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 6;
@@ -179,16 +192,16 @@
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(91, 171);
+            this.txtCity.Location = new System.Drawing.Point(91, 195);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(207, 20);
-            this.txtCity.TabIndex = 9;
+            this.txtCity.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 175);
+            this.label4.Location = new System.Drawing.Point(10, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 8;
@@ -216,11 +229,11 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearch.Location = new System.Drawing.Point(3, 18);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(9, 26);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(356, 22);
-            this.txtSearch.TabIndex = 19;
+            this.txtSearch.Size = new System.Drawing.Size(347, 22);
+            this.txtSearch.TabIndex = 13;
             // 
             // groupBox1
             // 
@@ -228,26 +241,48 @@
             this.groupBox1.Controls.Add(this.rbName);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(314, 202);
+            this.groupBox1.Location = new System.Drawing.Point(314, 225);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(362, 87);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa";
             // 
+            // rbCpf
+            // 
+            this.rbCpf.AutoSize = true;
+            this.rbCpf.Location = new System.Drawing.Point(72, 61);
+            this.rbCpf.Name = "rbCpf";
+            this.rbCpf.Size = new System.Drawing.Size(45, 17);
+            this.rbCpf.TabIndex = 15;
+            this.rbCpf.Text = "CPF";
+            this.rbCpf.UseVisualStyleBackColor = true;
+            // 
+            // rbName
+            // 
+            this.rbName.AutoSize = true;
+            this.rbName.Checked = true;
+            this.rbName.Location = new System.Drawing.Point(9, 61);
+            this.rbName.Name = "rbName";
+            this.rbName.Size = new System.Drawing.Size(57, 17);
+            this.rbName.TabIndex = 14;
+            this.rbName.TabStop = true;
+            this.rbName.Text = "Nome";
+            this.rbName.UseVisualStyleBackColor = true;
+            // 
             // dtpBirthdate
             // 
             this.dtpBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthdate.Location = new System.Drawing.Point(91, 198);
+            this.dtpBirthdate.Location = new System.Drawing.Point(91, 222);
             this.dtpBirthdate.Name = "dtpBirthdate";
             this.dtpBirthdate.Size = new System.Drawing.Size(101, 20);
-            this.dtpBirthdate.TabIndex = 21;
+            this.dtpBirthdate.TabIndex = 6;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(10, 202);
+            this.label9.Location = new System.Drawing.Point(10, 226);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 13);
             this.label9.TabIndex = 22;
@@ -255,17 +290,17 @@
             // 
             // txtObservation
             // 
-            this.txtObservation.Location = new System.Drawing.Point(91, 225);
+            this.txtObservation.Location = new System.Drawing.Point(91, 248);
             this.txtObservation.Multiline = true;
             this.txtObservation.Name = "txtObservation";
             this.txtObservation.Size = new System.Drawing.Size(207, 64);
-            this.txtObservation.TabIndex = 23;
+            this.txtObservation.TabIndex = 12;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(10, 225);
+            this.label10.Location = new System.Drawing.Point(5, 248);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 13);
             this.label10.TabIndex = 24;
@@ -278,32 +313,88 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(314, 90);
+            this.groupBox2.Location = new System.Drawing.Point(314, 116);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(154, 101);
+            this.groupBox2.Size = new System.Drawing.Size(130, 99);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Documentos";
             // 
+            // txtRg
+            // 
+            this.txtRg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRg.Location = new System.Drawing.Point(42, 58);
+            this.txtRg.Mask = "00\\.000\\.000-0";
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(75, 22);
+            this.txtRg.TabIndex = 8;
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Location = new System.Drawing.Point(42, 26);
+            this.txtCpf.Mask = "000\\.000\\.000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(75, 22);
+            this.txtCpf.TabIndex = 7;
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtEmail);
+            this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.txtCellphone);
             this.groupBox3.Controls.Add(this.txtPhone);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(484, 91);
+            this.groupBox3.Location = new System.Drawing.Point(450, 116);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(192, 100);
+            this.groupBox3.Size = new System.Drawing.Size(226, 99);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contato";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(80, 14);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(135, 22);
+            this.txtEmail.TabIndex = 9;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(8, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Email:";
+            // 
+            // txtCellphone
+            // 
+            this.txtCellphone.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCellphone.Location = new System.Drawing.Point(80, 70);
+            this.txtCellphone.Mask = "(00)00000-0000";
+            this.txtCellphone.Name = "txtCellphone";
+            this.txtCellphone.Size = new System.Drawing.Size(135, 22);
+            this.txtCellphone.TabIndex = 11;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(80, 42);
+            this.txtPhone.Mask = "(00)00000-0000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(135, 22);
+            this.txtPhone.TabIndex = 10;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 31);
+            this.label7.Location = new System.Drawing.Point(8, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 10;
@@ -313,7 +404,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 63);
+            this.label8.Location = new System.Drawing.Point(8, 75);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 13);
             this.label8.TabIndex = 12;
@@ -343,7 +434,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(310, 67);
+            this.label12.Location = new System.Drawing.Point(314, 67);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(94, 13);
             this.label12.TabIndex = 30;
@@ -353,32 +444,10 @@
             // 
             this.dtpRegistrationDate.Enabled = false;
             this.dtpRegistrationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpRegistrationDate.Location = new System.Drawing.Point(407, 63);
+            this.dtpRegistrationDate.Location = new System.Drawing.Point(414, 63);
             this.dtpRegistrationDate.Name = "dtpRegistrationDate";
-            this.dtpRegistrationDate.Size = new System.Drawing.Size(104, 20);
+            this.dtpRegistrationDate.Size = new System.Drawing.Size(90, 20);
             this.dtpRegistrationDate.TabIndex = 29;
-            // 
-            // rbName
-            // 
-            this.rbName.AutoSize = true;
-            this.rbName.Checked = true;
-            this.rbName.Location = new System.Drawing.Point(9, 61);
-            this.rbName.Name = "rbName";
-            this.rbName.Size = new System.Drawing.Size(57, 17);
-            this.rbName.TabIndex = 20;
-            this.rbName.TabStop = true;
-            this.rbName.Text = "Nome";
-            this.rbName.UseVisualStyleBackColor = true;
-            // 
-            // rbCpf
-            // 
-            this.rbCpf.AutoSize = true;
-            this.rbCpf.Location = new System.Drawing.Point(72, 61);
-            this.rbCpf.Name = "rbCpf";
-            this.rbCpf.Size = new System.Drawing.Size(45, 17);
-            this.rbCpf.TabIndex = 21;
-            this.rbCpf.Text = "CPF";
-            this.rbCpf.UseVisualStyleBackColor = true;
             // 
             // dtgClients
             // 
@@ -388,12 +457,21 @@
             this.dtgClients.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgClients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.Address,
-            this.city,
-            this.cpf,
-            this.phone});
-            this.dtgClients.Location = new System.Drawing.Point(13, 309);
+            this.dtgId,
+            this.dtgName,
+            this.dtgLastName,
+            this.dtgAddress,
+            this.dtgNeighborhood,
+            this.dtgCellphone,
+            this.dtgPhone,
+            this.dtgEmail,
+            this.dtgRegistrationDate,
+            this.dtgRg,
+            this.dtgCity,
+            this.dtgCpf,
+            this.dtgBirthdate,
+            this.dtgOberservation});
+            this.dtgClients.Location = new System.Drawing.Point(13, 329);
             this.dtgClients.MultiSelect = false;
             this.dtgClients.Name = "dtgClients";
             this.dtgClients.ReadOnly = true;
@@ -401,74 +479,136 @@
             this.dtgClients.Size = new System.Drawing.Size(663, 170);
             this.dtgClients.TabIndex = 31;
             // 
-            // txtCpf
+            // txtLastName
             // 
-            this.txtCpf.Location = new System.Drawing.Point(42, 26);
-            this.txtCpf.Mask = "000\\.000\\.000-00";
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(100, 22);
-            this.txtCpf.TabIndex = 14;
+            this.txtLastName.Location = new System.Drawing.Point(91, 116);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(207, 20);
+            this.txtLastName.TabIndex = 2;
             // 
-            // txtRg
+            // label13
             // 
-            this.txtRg.Location = new System.Drawing.Point(42, 58);
-            this.txtRg.Mask = "00\\.000\\.000-0";
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(100, 22);
-            this.txtRg.TabIndex = 15;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(10, 119);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 13);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Sobrenome:";
             // 
-            // txtPhone
+            // dtgId
             // 
-            this.txtPhone.Location = new System.Drawing.Point(80, 26);
-            this.txtPhone.Mask = "(00)00000-0000";
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(100, 22);
-            this.txtPhone.TabIndex = 16;
+            this.dtgId.DataPropertyName = "id";
+            this.dtgId.HeaderText = "ID";
+            this.dtgId.Name = "dtgId";
+            this.dtgId.ReadOnly = true;
+            this.dtgId.Visible = false;
             // 
-            // txtCellphone
+            // dtgName
             // 
-            this.txtCellphone.Location = new System.Drawing.Point(80, 58);
-            this.txtCellphone.Mask = "(00)00000-0000";
-            this.txtCellphone.Name = "txtCellphone";
-            this.txtCellphone.Size = new System.Drawing.Size(100, 22);
-            this.txtCellphone.TabIndex = 17;
+            this.dtgName.DataPropertyName = "first_name";
+            this.dtgName.HeaderText = "Nome";
+            this.dtgName.Name = "dtgName";
+            this.dtgName.ReadOnly = true;
             // 
-            // name
+            // dtgLastName
             // 
-            this.name.HeaderText = "Nome";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
+            this.dtgLastName.DataPropertyName = "last_name";
+            this.dtgLastName.HeaderText = "Sobrenome";
+            this.dtgLastName.Name = "dtgLastName";
+            this.dtgLastName.ReadOnly = true;
             // 
-            // Address
+            // dtgAddress
             // 
-            this.Address.HeaderText = "Endereço";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
+            this.dtgAddress.DataPropertyName = "address";
+            this.dtgAddress.HeaderText = "Endereço";
+            this.dtgAddress.Name = "dtgAddress";
+            this.dtgAddress.ReadOnly = true;
             // 
-            // city
+            // dtgNeighborhood
             // 
-            this.city.HeaderText = "Cidade";
-            this.city.Name = "city";
-            this.city.ReadOnly = true;
+            this.dtgNeighborhood.DataPropertyName = "neighborhood";
+            this.dtgNeighborhood.HeaderText = "Bairro";
+            this.dtgNeighborhood.Name = "dtgNeighborhood";
+            this.dtgNeighborhood.ReadOnly = true;
+            this.dtgNeighborhood.Visible = false;
             // 
-            // cpf
+            // dtgCellphone
             // 
-            this.cpf.HeaderText = "CPF";
-            this.cpf.Name = "cpf";
-            this.cpf.ReadOnly = true;
+            this.dtgCellphone.DataPropertyName = "cellphone";
+            this.dtgCellphone.HeaderText = "Celular";
+            this.dtgCellphone.Name = "dtgCellphone";
+            this.dtgCellphone.ReadOnly = true;
             // 
-            // phone
+            // dtgPhone
             // 
-            this.phone.HeaderText = "Telefone";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
+            this.dtgPhone.DataPropertyName = "phone";
+            this.dtgPhone.HeaderText = "Telefone";
+            this.dtgPhone.Name = "dtgPhone";
+            this.dtgPhone.ReadOnly = true;
+            // 
+            // dtgEmail
+            // 
+            this.dtgEmail.DataPropertyName = "email";
+            this.dtgEmail.HeaderText = "E-mail";
+            this.dtgEmail.Name = "dtgEmail";
+            this.dtgEmail.ReadOnly = true;
+            // 
+            // dtgRegistrationDate
+            // 
+            this.dtgRegistrationDate.DataPropertyName = "registrationDate";
+            this.dtgRegistrationDate.HeaderText = "Data de Cadastro";
+            this.dtgRegistrationDate.Name = "dtgRegistrationDate";
+            this.dtgRegistrationDate.ReadOnly = true;
+            this.dtgRegistrationDate.Visible = false;
+            // 
+            // dtgRg
+            // 
+            this.dtgRg.DataPropertyName = "rg";
+            this.dtgRg.HeaderText = "RG";
+            this.dtgRg.Name = "dtgRg";
+            this.dtgRg.ReadOnly = true;
+            this.dtgRg.Visible = false;
+            // 
+            // dtgCity
+            // 
+            this.dtgCity.DataPropertyName = "city";
+            this.dtgCity.HeaderText = "Cidade";
+            this.dtgCity.Name = "dtgCity";
+            this.dtgCity.ReadOnly = true;
+            this.dtgCity.Visible = false;
+            // 
+            // dtgCpf
+            // 
+            this.dtgCpf.DataPropertyName = "cpf";
+            this.dtgCpf.HeaderText = "CPF";
+            this.dtgCpf.Name = "dtgCpf";
+            this.dtgCpf.ReadOnly = true;
+            this.dtgCpf.Visible = false;
+            // 
+            // dtgBirthdate
+            // 
+            this.dtgBirthdate.DataPropertyName = "birthdate";
+            this.dtgBirthdate.HeaderText = "Data de Nascimento";
+            this.dtgBirthdate.Name = "dtgBirthdate";
+            this.dtgBirthdate.ReadOnly = true;
+            this.dtgBirthdate.Visible = false;
+            // 
+            // dtgOberservation
+            // 
+            this.dtgOberservation.DataPropertyName = "observation";
+            this.dtgOberservation.HeaderText = "Observação";
+            this.dtgOberservation.Name = "dtgOberservation";
+            this.dtgOberservation.ReadOnly = true;
             // 
             // frmClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(693, 494);
+            this.ClientSize = new System.Drawing.Size(689, 511);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.dtgClients);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dtpRegistrationDate);
@@ -491,6 +631,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmClients";
             this.Text = "Clientes";
             this.toolStrip1.ResumeLayout(false);
@@ -545,10 +686,23 @@
         private System.Windows.Forms.MaskedTextBox txtCpf;
         private System.Windows.Forms.MaskedTextBox txtCellphone;
         private System.Windows.Forms.MaskedTextBox txtPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn city;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgNeighborhood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgCellphone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgRegistrationDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgRg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgBirthdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgOberservation;
     }
 }
