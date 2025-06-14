@@ -112,5 +112,14 @@
   <ItemGroup>
     <None Include="Resources\health_cross.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

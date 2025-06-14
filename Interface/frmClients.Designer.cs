@@ -35,7 +35,7 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNeighborhood = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dtpRegistrationDate = new System.Windows.Forms.DateTimePicker();
@@ -70,7 +70,7 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dtgId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgNeighborhood = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,8 +81,10 @@
             this.dtgRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgObservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgBirthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgOberservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dtgDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -149,12 +151,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Nome:";
             // 
-            // txtName
+            // txtFirstName
             // 
-            this.txtName.Location = new System.Drawing.Point(91, 90);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(89, 20);
-            this.txtName.TabIndex = 1;
+            this.txtFirstName.Location = new System.Drawing.Point(91, 90);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(89, 20);
+            this.txtFirstName.TabIndex = 1;
             // 
             // txtAddress
             // 
@@ -234,6 +236,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(347, 22);
             this.txtSearch.TabIndex = 13;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // groupBox1
             // 
@@ -410,15 +413,15 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Celular:";
             // 
-            // txtID
+            // txtId
             // 
-            this.txtID.Location = new System.Drawing.Point(91, 63);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtID.Size = new System.Drawing.Size(36, 20);
-            this.txtID.TabIndex = 28;
-            this.txtID.Text = "0";
+            this.txtId.Location = new System.Drawing.Point(91, 63);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtId.Size = new System.Drawing.Size(36, 20);
+            this.txtId.TabIndex = 28;
+            this.txtId.Text = "0";
             // 
             // label11
             // 
@@ -458,7 +461,7 @@
             this.dtgClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgClients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dtgId,
-            this.dtgName,
+            this.dtgFirstName,
             this.dtgLastName,
             this.dtgAddress,
             this.dtgNeighborhood,
@@ -469,8 +472,10 @@
             this.dtgRg,
             this.dtgCity,
             this.dtgCpf,
+            this.dtgObservation,
             this.dtgBirthdate,
-            this.dtgOberservation});
+            this.dtgEdit,
+            this.dtgDelete});
             this.dtgClients.Location = new System.Drawing.Point(13, 329);
             this.dtgClients.MultiSelect = false;
             this.dtgClients.Name = "dtgClients";
@@ -478,6 +483,7 @@
             this.dtgClients.RowHeadersVisible = false;
             this.dtgClients.Size = new System.Drawing.Size(663, 170);
             this.dtgClients.TabIndex = 31;
+            this.dtgClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgClients_CellContentClick);
             // 
             // txtLastName
             // 
@@ -504,16 +510,20 @@
             this.dtgId.ReadOnly = true;
             this.dtgId.Visible = false;
             // 
-            // dtgName
+            // dtgFirstName
             // 
-            this.dtgName.DataPropertyName = "first_name";
-            this.dtgName.HeaderText = "Nome";
-            this.dtgName.Name = "dtgName";
-            this.dtgName.ReadOnly = true;
+            this.dtgFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgFirstName.DataPropertyName = "first_name";
+            this.dtgFirstName.FillWeight = 166.5035F;
+            this.dtgFirstName.HeaderText = "Nome";
+            this.dtgFirstName.Name = "dtgFirstName";
+            this.dtgFirstName.ReadOnly = true;
+            this.dtgFirstName.Width = 60;
             // 
             // dtgLastName
             // 
             this.dtgLastName.DataPropertyName = "last_name";
+            this.dtgLastName.FillWeight = 48.28601F;
             this.dtgLastName.HeaderText = "Sobrenome";
             this.dtgLastName.Name = "dtgLastName";
             this.dtgLastName.ReadOnly = true;
@@ -521,6 +531,7 @@
             // dtgAddress
             // 
             this.dtgAddress.DataPropertyName = "address";
+            this.dtgAddress.FillWeight = 48.28601F;
             this.dtgAddress.HeaderText = "Endereço";
             this.dtgAddress.Name = "dtgAddress";
             this.dtgAddress.ReadOnly = true;
@@ -536,6 +547,7 @@
             // dtgCellphone
             // 
             this.dtgCellphone.DataPropertyName = "cellphone";
+            this.dtgCellphone.FillWeight = 48.28601F;
             this.dtgCellphone.HeaderText = "Celular";
             this.dtgCellphone.Name = "dtgCellphone";
             this.dtgCellphone.ReadOnly = true;
@@ -543,6 +555,7 @@
             // dtgPhone
             // 
             this.dtgPhone.DataPropertyName = "phone";
+            this.dtgPhone.FillWeight = 48.28601F;
             this.dtgPhone.HeaderText = "Telefone";
             this.dtgPhone.Name = "dtgPhone";
             this.dtgPhone.ReadOnly = true;
@@ -550,6 +563,7 @@
             // dtgEmail
             // 
             this.dtgEmail.DataPropertyName = "email";
+            this.dtgEmail.FillWeight = 48.28601F;
             this.dtgEmail.HeaderText = "E-mail";
             this.dtgEmail.Name = "dtgEmail";
             this.dtgEmail.ReadOnly = true;
@@ -586,6 +600,15 @@
             this.dtgCpf.ReadOnly = true;
             this.dtgCpf.Visible = false;
             // 
+            // dtgObservation
+            // 
+            this.dtgObservation.DataPropertyName = "observation";
+            this.dtgObservation.FillWeight = 48.28601F;
+            this.dtgObservation.HeaderText = "Observação";
+            this.dtgObservation.Name = "dtgObservation";
+            this.dtgObservation.ReadOnly = true;
+            this.dtgObservation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // dtgBirthdate
             // 
             this.dtgBirthdate.DataPropertyName = "birthdate";
@@ -594,12 +617,24 @@
             this.dtgBirthdate.ReadOnly = true;
             this.dtgBirthdate.Visible = false;
             // 
-            // dtgOberservation
+            // dtgEdit
             // 
-            this.dtgOberservation.DataPropertyName = "observation";
-            this.dtgOberservation.HeaderText = "Observação";
-            this.dtgOberservation.Name = "dtgOberservation";
-            this.dtgOberservation.ReadOnly = true;
+            this.dtgEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgEdit.HeaderText = "";
+            this.dtgEdit.Image = global::Interface.Properties.Resources.edit_20;
+            this.dtgEdit.Name = "dtgEdit";
+            this.dtgEdit.ReadOnly = true;
+            this.dtgEdit.Width = 30;
+            // 
+            // dtgDelete
+            // 
+            this.dtgDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgDelete.FillWeight = 99.9021F;
+            this.dtgDelete.HeaderText = "";
+            this.dtgDelete.Image = global::Interface.Properties.Resources.delete_20;
+            this.dtgDelete.Name = "dtgDelete";
+            this.dtgDelete.ReadOnly = true;
+            this.dtgDelete.Width = 30;
             // 
             // frmClients
             // 
@@ -612,7 +647,7 @@
             this.Controls.Add(this.dtgClients);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dtpRegistrationDate);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -627,7 +662,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -656,7 +691,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNeighborhood;
@@ -675,7 +710,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton rbCpf;
         private System.Windows.Forms.RadioButton rbName;
@@ -691,7 +726,7 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtgName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgNeighborhood;
@@ -702,7 +737,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgRg;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgObservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgBirthdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtgOberservation;
+        private System.Windows.Forms.DataGridViewImageColumn dtgEdit;
+        private System.Windows.Forms.DataGridViewImageColumn dtgDelete;
     }
 }
