@@ -76,10 +76,9 @@ namespace Interface
                 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    clientsBusiness = new Business.ClientsBusiness();
-                    clientsBusiness.Delete(Int32.Parse(dtgClients.Rows[e.RowIndex].Cells["dtgId"].Value.ToString()));
-                    MessageBox.Show("Cliente excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int clientId = Int32.Parse(dtgClients.Rows[e.RowIndex].Cells["dtgId"].Value.ToString());
 
+                    deleteClient(clientId);
                     listClients();
                 }
             }
@@ -101,6 +100,13 @@ namespace Interface
         {
             clientsBusiness = new Business.ClientsBusiness();
             clientsBusiness.Update(Int32.Parse(txtId.Text), txtFirstName.Text, txtLastName.Text, dtpBirthdate.Value, txtCpf.Text, txtRg.Text, txtAddress.Text, txtNeighborhood.Text, txtCity.Text, txtEmail.Text, txtPhone.Text, txtCellphone.Text, txtObservation.Text, dtpRegistrationDate.Value);
+        }
+
+        private void deleteClient(int id)
+        {
+            clientsBusiness = new Business.ClientsBusiness();
+            clientsBusiness.Delete(id);
+            MessageBox.Show("Cliente excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void listClients()
