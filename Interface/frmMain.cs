@@ -13,6 +13,7 @@ namespace Interface
     public partial class frmMain : Form
     {
         Interface.frmClients clientForm;
+        Interface.frmProducts productForm;
 
         public frmMain()
         {
@@ -23,6 +24,12 @@ namespace Interface
         {
             clientForm = new Interface.frmClients();
             clientForm.Show();
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            productForm= new Interface.frmProducts();
+            productForm.Show();
         }
     }
 }

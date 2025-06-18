@@ -72,6 +72,7 @@
             this.btnProducts.Size = new System.Drawing.Size(60, 60);
             this.btnProducts.Text = "Produtos";
             this.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // toolStripSeparator1
             // 
