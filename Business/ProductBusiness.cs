@@ -110,6 +110,19 @@ namespace Business
             }
         }
 
+        public DataTable VerifyStock()
+        {
+            try
+            {
+                productsDataAccess = new DataAccess.ProductDataAccess();
+                return productsDataAccess.VerifyStock();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public void ValidateFields(int id, string name, string barcode, string details, int categoryId, int stockMin, int stockCurrent, decimal cost, decimal sale)
         {
             try

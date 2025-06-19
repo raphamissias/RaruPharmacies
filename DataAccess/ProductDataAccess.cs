@@ -136,10 +136,11 @@ namespace DataAccess
                 {
                     conn.Open();
 
-                    sql.Append("SELECT * FROM Products");
-                    sql.Append(" WHERE name LIKE @name");
+                    sql.Append("SELECT Products.*, Categories.name as categoryName FROM Products INNER JOIN Categories");
+                    sql.Append(" ON Products.categoryId = Categories.id");
+                    sql.Append(" WHERE Products.name LIKE @name+'%'");
 
-                    sqlCommand.Parameters.Add(new SqlParameter("@name", name + "%"));
+                    sqlCommand.Parameters.Add(new SqlParameter("@name", name));
 
                     sqlCommand.CommandText = sql.ToString();
                     sqlCommand.Connection = conn;
@@ -164,7 +165,7 @@ namespace DataAccess
 
                     sql.Append("SELECT Products.*, Categories.name AS categoryName from Products INNER JOIN Categories");
                     sql.Append(" ON Products.categoryId = Categories.id");
-                    sql.Append(" WHERE categoryName=@categoryName");
+                    sql.Append(" WHERE Categories.name LIKE @categoryName+'%'");
 
                     sqlCommand.Parameters.Add(new SqlParameter("@categoryName", categoryName));
 
@@ -189,8 +190,9 @@ namespace DataAccess
                 {
                     conn.Open();
 
-                    sql.Append("SELECT * FROM Products");
-                    sql.Append(" WHERE barcode=@barcode");
+                    sql.Append("SELECT Products.*, Categories.name AS categoryName FROM Products INNER JOIN Categories");
+                    sql.Append(" ON Products.categoryId = Categories.id");
+                    sql.Append(" WHERE barcode LIKE @barcode+'%'");
 
                     sqlCommand.Parameters.Add(new SqlParameter("@barcode", barcode));
 
@@ -206,6 +208,30 @@ namespace DataAccess
                 throw new Exception("Ocorreu um erro no método listar pelo código de barras. Caso o problema persista, entre em contato com o Administrador do sistema.");
             }
 
+        }
+
+        public DataTable VerifyStock()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Connection.stringConnection))
+                {
+                    conn.Open();
+
+                    sql.Append("SELECT * FROM Products");
+                    sql.Append(" WHERE stockCurrent <= stockMin");
+
+                    sqlCommand.CommandText = sql.ToString();
+                    sqlCommand.Connection = conn;
+                    dataTable.Load(sqlCommand.ExecuteReader());
+
+                    return dataTable;
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método verificar estoque. Caso o problema persista, entre em contato com o Administrador do sistema.");
+            }
         }
     }
 }
