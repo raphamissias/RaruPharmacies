@@ -29,9 +29,23 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducts));
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.dtgProducts = new System.Windows.Forms.DataGridView();
+            this.dtgId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgBarcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgRegisterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockCurrent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dtgDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.dtpRegistrationDate = new System.Windows.Forms.DateTimePicker();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -63,19 +77,18 @@
             this.numMin = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.dtgId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgBarcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgRegisterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgStockMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgStockCurrent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dtgDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtgStock = new System.Windows.Forms.DataGridView();
+            this.dtgStockId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockBarcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockRegisterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockStockMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockStockCurrent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgStockCategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducts)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -83,6 +96,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCurrent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgStock)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBarcode
@@ -121,6 +135,120 @@
             this.dtgProducts.Size = new System.Drawing.Size(683, 196);
             this.dtgProducts.TabIndex = 55;
             this.dtgProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducts_CellContentClick);
+            // 
+            // dtgId
+            // 
+            this.dtgId.DataPropertyName = "id";
+            this.dtgId.HeaderText = "ID";
+            this.dtgId.Name = "dtgId";
+            this.dtgId.ReadOnly = true;
+            this.dtgId.Visible = false;
+            // 
+            // dtgBarcode
+            // 
+            this.dtgBarcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgBarcode.DataPropertyName = "barcode";
+            this.dtgBarcode.FillWeight = 48.28601F;
+            this.dtgBarcode.HeaderText = "Cód. Barras";
+            this.dtgBarcode.Name = "dtgBarcode";
+            this.dtgBarcode.ReadOnly = true;
+            // 
+            // dtgName
+            // 
+            this.dtgName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgName.DataPropertyName = "name";
+            this.dtgName.FillWeight = 166.5035F;
+            this.dtgName.HeaderText = "Nome";
+            this.dtgName.Name = "dtgName";
+            this.dtgName.ReadOnly = true;
+            this.dtgName.Width = 150;
+            // 
+            // dtgDetails
+            // 
+            this.dtgDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgDetails.DataPropertyName = "details";
+            this.dtgDetails.FillWeight = 48.28601F;
+            this.dtgDetails.HeaderText = "Detalhes";
+            this.dtgDetails.Name = "dtgDetails";
+            this.dtgDetails.ReadOnly = true;
+            // 
+            // dtgRegisterDate
+            // 
+            this.dtgRegisterDate.DataPropertyName = "registerDate";
+            this.dtgRegisterDate.HeaderText = "Data de Registro";
+            this.dtgRegisterDate.Name = "dtgRegisterDate";
+            this.dtgRegisterDate.ReadOnly = true;
+            this.dtgRegisterDate.Visible = false;
+            // 
+            // dtgStockMin
+            // 
+            this.dtgStockMin.DataPropertyName = "stockMin";
+            this.dtgStockMin.FillWeight = 48.28601F;
+            this.dtgStockMin.HeaderText = "Estoque Mín.";
+            this.dtgStockMin.Name = "dtgStockMin";
+            this.dtgStockMin.ReadOnly = true;
+            this.dtgStockMin.Visible = false;
+            // 
+            // dtgStockCurrent
+            // 
+            this.dtgStockCurrent.DataPropertyName = "stockCurrent";
+            this.dtgStockCurrent.FillWeight = 48.28601F;
+            this.dtgStockCurrent.HeaderText = "Estoque";
+            this.dtgStockCurrent.Name = "dtgStockCurrent";
+            this.dtgStockCurrent.ReadOnly = true;
+            // 
+            // dtgCost
+            // 
+            this.dtgCost.DataPropertyName = "cost";
+            this.dtgCost.FillWeight = 48.28601F;
+            this.dtgCost.HeaderText = "Custo";
+            this.dtgCost.Name = "dtgCost";
+            this.dtgCost.ReadOnly = true;
+            this.dtgCost.Visible = false;
+            // 
+            // dtgSale
+            // 
+            this.dtgSale.DataPropertyName = "sale";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dtgSale.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgSale.HeaderText = "Venda";
+            this.dtgSale.Name = "dtgSale";
+            this.dtgSale.ReadOnly = true;
+            // 
+            // dtgCategory
+            // 
+            this.dtgCategory.DataPropertyName = "categoryName";
+            this.dtgCategory.HeaderText = "Categoria";
+            this.dtgCategory.Name = "dtgCategory";
+            this.dtgCategory.ReadOnly = true;
+            // 
+            // categoryId
+            // 
+            this.categoryId.DataPropertyName = "categoryId";
+            this.categoryId.HeaderText = "ID Categoria";
+            this.categoryId.Name = "categoryId";
+            this.categoryId.ReadOnly = true;
+            this.categoryId.Visible = false;
+            // 
+            // dtgEdit
+            // 
+            this.dtgEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgEdit.HeaderText = "";
+            this.dtgEdit.Image = global::Interface.Properties.Resources.edit_20;
+            this.dtgEdit.Name = "dtgEdit";
+            this.dtgEdit.ReadOnly = true;
+            this.dtgEdit.Width = 30;
+            // 
+            // dtgDelete
+            // 
+            this.dtgDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgDelete.FillWeight = 99.9021F;
+            this.dtgDelete.HeaderText = "";
+            this.dtgDelete.Image = global::Interface.Properties.Resources.delete_20;
+            this.dtgDelete.Name = "dtgDelete";
+            this.dtgDelete.ReadOnly = true;
+            this.dtgDelete.Width = 30;
             // 
             // label12
             // 
@@ -235,7 +363,7 @@
             this.btnCategories});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(709, 53);
+            this.toolStrip1.Size = new System.Drawing.Size(932, 53);
             this.toolStrip1.TabIndex = 35;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -440,126 +568,141 @@
             this.cbCategory.Size = new System.Drawing.Size(133, 21);
             this.cbCategory.TabIndex = 58;
             // 
-            // dtgId
+            // label3
             // 
-            this.dtgId.DataPropertyName = "id";
-            this.dtgId.HeaderText = "ID";
-            this.dtgId.Name = "dtgId";
-            this.dtgId.ReadOnly = true;
-            this.dtgId.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(711, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(168, 15);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Produtos com estoque baixo:";
             // 
-            // dtgBarcode
+            // dtgStock
             // 
-            this.dtgBarcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dtgBarcode.DataPropertyName = "barcode";
-            this.dtgBarcode.FillWeight = 48.28601F;
-            this.dtgBarcode.HeaderText = "Cód. Barras";
-            this.dtgBarcode.Name = "dtgBarcode";
-            this.dtgBarcode.ReadOnly = true;
+            this.dtgStock.AllowUserToAddRows = false;
+            this.dtgStock.AllowUserToDeleteRows = false;
+            this.dtgStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgStock.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgStockId,
+            this.dtgStockBarcode,
+            this.dtgStockName,
+            this.dtgStockDetails,
+            this.dtgStockRegisterDate,
+            this.dtgStockStockMin,
+            this.dtgStockStockCurrent,
+            this.dtgStockCost,
+            this.dtgStockSale,
+            this.dtgStockCategoryId});
+            this.dtgStock.Location = new System.Drawing.Point(714, 96);
+            this.dtgStock.MultiSelect = false;
+            this.dtgStock.Name = "dtgStock";
+            this.dtgStock.ReadOnly = true;
+            this.dtgStock.RowHeadersVisible = false;
+            this.dtgStock.Size = new System.Drawing.Size(206, 334);
+            this.dtgStock.TabIndex = 61;
+            this.dtgStock.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgStock_CellDoubleClick);
             // 
-            // dtgName
+            // dtgStockId
             // 
-            this.dtgName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dtgName.DataPropertyName = "name";
-            this.dtgName.FillWeight = 166.5035F;
-            this.dtgName.HeaderText = "Nome";
-            this.dtgName.Name = "dtgName";
-            this.dtgName.ReadOnly = true;
-            this.dtgName.Width = 150;
+            this.dtgStockId.DataPropertyName = "id";
+            this.dtgStockId.HeaderText = "ID";
+            this.dtgStockId.Name = "dtgStockId";
+            this.dtgStockId.ReadOnly = true;
+            this.dtgStockId.Visible = false;
             // 
-            // dtgDetails
+            // dtgStockBarcode
             // 
-            this.dtgDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dtgDetails.DataPropertyName = "details";
-            this.dtgDetails.FillWeight = 48.28601F;
-            this.dtgDetails.HeaderText = "Detalhes";
-            this.dtgDetails.Name = "dtgDetails";
-            this.dtgDetails.ReadOnly = true;
+            this.dtgStockBarcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgStockBarcode.DataPropertyName = "barcode";
+            this.dtgStockBarcode.FillWeight = 48.28601F;
+            this.dtgStockBarcode.HeaderText = "Cód. Barras";
+            this.dtgStockBarcode.Name = "dtgStockBarcode";
+            this.dtgStockBarcode.ReadOnly = true;
+            this.dtgStockBarcode.Visible = false;
             // 
-            // dtgRegisterDate
+            // dtgStockName
             // 
-            this.dtgRegisterDate.DataPropertyName = "registerDate";
-            this.dtgRegisterDate.HeaderText = "Data de Registro";
-            this.dtgRegisterDate.Name = "dtgRegisterDate";
-            this.dtgRegisterDate.ReadOnly = true;
-            this.dtgRegisterDate.Visible = false;
+            this.dtgStockName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgStockName.DataPropertyName = "name";
+            this.dtgStockName.FillWeight = 166.5035F;
+            this.dtgStockName.HeaderText = "Nome";
+            this.dtgStockName.Name = "dtgStockName";
+            this.dtgStockName.ReadOnly = true;
             // 
-            // dtgStockMin
+            // dtgStockDetails
             // 
-            this.dtgStockMin.DataPropertyName = "stockMin";
-            this.dtgStockMin.FillWeight = 48.28601F;
-            this.dtgStockMin.HeaderText = "Estoque Mín.";
-            this.dtgStockMin.Name = "dtgStockMin";
-            this.dtgStockMin.ReadOnly = true;
-            this.dtgStockMin.Visible = false;
+            this.dtgStockDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dtgStockDetails.DataPropertyName = "details";
+            this.dtgStockDetails.FillWeight = 48.28601F;
+            this.dtgStockDetails.HeaderText = "Detalhes";
+            this.dtgStockDetails.Name = "dtgStockDetails";
+            this.dtgStockDetails.ReadOnly = true;
             // 
-            // dtgStockCurrent
+            // dtgStockRegisterDate
             // 
-            this.dtgStockCurrent.DataPropertyName = "stockCurrent";
-            this.dtgStockCurrent.FillWeight = 48.28601F;
-            this.dtgStockCurrent.HeaderText = "Estoque";
-            this.dtgStockCurrent.Name = "dtgStockCurrent";
-            this.dtgStockCurrent.ReadOnly = true;
+            this.dtgStockRegisterDate.DataPropertyName = "registerDate";
+            this.dtgStockRegisterDate.HeaderText = "Data de Registro";
+            this.dtgStockRegisterDate.Name = "dtgStockRegisterDate";
+            this.dtgStockRegisterDate.ReadOnly = true;
+            this.dtgStockRegisterDate.Visible = false;
             // 
-            // dtgCost
+            // dtgStockStockMin
             // 
-            this.dtgCost.DataPropertyName = "cost";
-            this.dtgCost.FillWeight = 48.28601F;
-            this.dtgCost.HeaderText = "Custo";
-            this.dtgCost.Name = "dtgCost";
-            this.dtgCost.ReadOnly = true;
-            this.dtgCost.Visible = false;
+            this.dtgStockStockMin.DataPropertyName = "stockMin";
+            this.dtgStockStockMin.FillWeight = 48.28601F;
+            this.dtgStockStockMin.HeaderText = "Estoque Mín.";
+            this.dtgStockStockMin.Name = "dtgStockStockMin";
+            this.dtgStockStockMin.ReadOnly = true;
+            this.dtgStockStockMin.Visible = false;
             // 
-            // dtgSale
+            // dtgStockStockCurrent
             // 
-            this.dtgSale.DataPropertyName = "sale";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dtgSale.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgSale.HeaderText = "Venda";
-            this.dtgSale.Name = "dtgSale";
-            this.dtgSale.ReadOnly = true;
+            this.dtgStockStockCurrent.DataPropertyName = "stockCurrent";
+            this.dtgStockStockCurrent.FillWeight = 48.28601F;
+            this.dtgStockStockCurrent.HeaderText = "Estoque";
+            this.dtgStockStockCurrent.Name = "dtgStockStockCurrent";
+            this.dtgStockStockCurrent.ReadOnly = true;
+            this.dtgStockStockCurrent.Visible = false;
             // 
-            // dtgCategory
+            // dtgStockCost
             // 
-            this.dtgCategory.DataPropertyName = "categoryName";
-            this.dtgCategory.HeaderText = "Categoria";
-            this.dtgCategory.Name = "dtgCategory";
-            this.dtgCategory.ReadOnly = true;
+            this.dtgStockCost.DataPropertyName = "cost";
+            this.dtgStockCost.FillWeight = 48.28601F;
+            this.dtgStockCost.HeaderText = "Custo";
+            this.dtgStockCost.Name = "dtgStockCost";
+            this.dtgStockCost.ReadOnly = true;
+            this.dtgStockCost.Visible = false;
             // 
-            // categoryId
+            // dtgStockSale
             // 
-            this.categoryId.DataPropertyName = "categoryId";
-            this.categoryId.HeaderText = "ID Categoria";
-            this.categoryId.Name = "categoryId";
-            this.categoryId.ReadOnly = true;
-            this.categoryId.Visible = false;
+            this.dtgStockSale.DataPropertyName = "sale";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dtgStockSale.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgStockSale.HeaderText = "Venda";
+            this.dtgStockSale.Name = "dtgStockSale";
+            this.dtgStockSale.ReadOnly = true;
+            this.dtgStockSale.Visible = false;
             // 
-            // dtgEdit
+            // dtgStockCategoryId
             // 
-            this.dtgEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dtgEdit.HeaderText = "";
-            this.dtgEdit.Image = global::Interface.Properties.Resources.edit_20;
-            this.dtgEdit.Name = "dtgEdit";
-            this.dtgEdit.ReadOnly = true;
-            this.dtgEdit.Width = 30;
-            // 
-            // dtgDelete
-            // 
-            this.dtgDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dtgDelete.FillWeight = 99.9021F;
-            this.dtgDelete.HeaderText = "";
-            this.dtgDelete.Image = global::Interface.Properties.Resources.delete_20;
-            this.dtgDelete.Name = "dtgDelete";
-            this.dtgDelete.ReadOnly = true;
-            this.dtgDelete.Width = 30;
+            this.dtgStockCategoryId.DataPropertyName = "categoryId";
+            this.dtgStockCategoryId.HeaderText = "ID Categoria";
+            this.dtgStockCategoryId.Name = "dtgStockCategoryId";
+            this.dtgStockCategoryId.ReadOnly = true;
+            this.dtgStockCategoryId.Visible = false;
             // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(709, 442);
+            this.ClientSize = new System.Drawing.Size(932, 442);
+            this.Controls.Add(this.dtgStock);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBarcode);
@@ -591,6 +734,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCurrent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -643,5 +787,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryId;
         private System.Windows.Forms.DataGridViewImageColumn dtgEdit;
         private System.Windows.Forms.DataGridViewImageColumn dtgDelete;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dtgStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockBarcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockRegisterDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockStockMin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockStockCurrent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtgStockCategoryId;
     }
 }

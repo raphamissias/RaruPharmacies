@@ -21,6 +21,7 @@ namespace Interface
             InitializeComponent();
             listProducts();
             listCategories();
+            VerifyStock();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -49,12 +50,7 @@ namespace Interface
         private void btnNew_Click(object sender, EventArgs e)
         {
             clearTxtFields();
-        }
-
-        private void btnCategories_Click(object sender, EventArgs e)
-        {
-            Form frmCategories = new frmCategories();
-            frmCategories.ShowDialog();
+            listProducts();
         }
 
         private void dtgProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -86,6 +82,12 @@ namespace Interface
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             listProductsByOptions();
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            Form frmCategories = new frmCategories(this);
+            frmCategories.ShowDialog();
         }
 
         private void saveNewProduct()
@@ -154,6 +156,8 @@ namespace Interface
                 dtgProducts.Columns["dtgCategory"].DisplayIndex = 8;
                 dtgProducts.Columns["dtgEdit"].DisplayIndex = 9;
                 dtgProducts.Columns["dtgDelete"].DisplayIndex = 10;
+
+                VerifyStock();
             }
             catch (Exception ex)
             {
@@ -186,13 +190,26 @@ namespace Interface
             }
         }
 
-        private void listCategories()
+        public void listCategories()
         {
             categoriesBusiness = new Business.CategoriesBusiness();
             cbCategory.DataSource = categoriesBusiness.List();
             cbCategory.DisplayMember = "name";
             cbCategory.ValueMember = "id";
             cbCategory.SelectedValue = 0;
+        }
+
+        private void VerifyStock()
+        {
+            try
+            {
+                productBusiness = new Business.ProductBusiness();
+                dtgStock.DataSource = productBusiness.VerifyStock();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void clearTxtFields()
@@ -206,6 +223,20 @@ namespace Interface
             numCurrent.Value = 0;
             txtCost.Text = "0";
             txtSale.Text = "0";
+        }
+
+        private void dtgStock_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockId"].Value.ToString();
+            txtName.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockName"].Value.ToString();
+            txtBarcode.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockBarcode"].Value.ToString();
+            txtDetails.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockDetails"].Value.ToString();
+            dtpRegistrationDate.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockRegisterDate"].Value.ToString();
+            numMin.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockStockMin"].Value.ToString();
+            numCurrent.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockStockCurrent"].Value.ToString();
+            txtCost.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockCost"].Value.ToString();
+            txtSale.Text = dtgStock.Rows[e.RowIndex].Cells["dtgStockSale"].Value.ToString();
+            cbCategory.SelectedValue = Int32.Parse(dtgStock.Rows[e.RowIndex].Cells["dtgStockCategoryId"].Value.ToString());
         }
     }
 }

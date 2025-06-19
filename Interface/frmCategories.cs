@@ -14,11 +14,13 @@ namespace Interface
     public partial class frmCategories : Form
     {
         Business.CategoriesBusiness categoriesBusiness;
+        frmProducts formProducts;
 
-        public frmCategories()
+        public frmCategories(frmProducts form)
         {
             InitializeComponent();
             listCategories();
+            formProducts = form;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -27,6 +29,7 @@ namespace Interface
                 if (txtId.Text == "0")
                 {
                     saveNewCategory();
+                    formProducts.listCategories();
                 }
                 else
                 {
